@@ -35,7 +35,7 @@ jobs:
           # Provide Checkmarx Username
 
           # Select a Checkmarx Project
-          project: # default is 
+          project: SCALAB
 
           # GitHub API Token
           github_token: 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
