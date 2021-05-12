@@ -1,0 +1,57 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: Checkmarx CxFlow Action
+        # You may pin to the exact commit or the version.
+        # uses: checkmarx-ts/checkmarx-cxflow-github-action@fe2a395cbbee31268470d92b6c53ebc483005f0f
+        uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.1
+        with:
+
+          # Select a Checkmarx Team
+          team: /CxServer/SCA_Training
+          # Provide Checkmarx Username
+
+          # Select a Checkmarx Project
+          project: # default is 
+
+          # GitHub API Token
+          github_token: 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
+          # Vulnerability Scanners (sast, sca, ast, cxgo)
+          scanners: sca
+          # Provide SCA API URL
+          sca_api_url: https://eu.api.scacheckmarx.net    
+          # Provide SCA APP URL
+          sca_app_url: https:// eu.sca.scacheckmarx.com
+          # Provide SCA Access Control URL
+          sca_access_control_url: https://eu.platform.checkmarx.net
+          # Provide SCA Tenant
+          sca_tenant: SCATraining
+          # Provide SCA Username
+          sca_username: kornecki
+          # Provide SCA Password
+          sca_password: Ameli@Tommy2021//
+          
+   
